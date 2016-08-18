@@ -3,6 +3,12 @@ import { bindActionCreators } from 'redux';
 import Demo from '../components/Demo';
 import * as DemoActions from '../actions/Demo';
 
-const mapStateToProps = state => state.register;
-const mapDispatchToProps = dispatch => bindActionCreators(DemoActions, dispatch);
-export default connect(null,mapDispatchToProps)(Demo);
+const mapStateToProps=state=>{
+	return state.demo1
+} ;
+const mapDispatchToProps=dispatch=>{
+    return{
+        actions : bindActionCreators(DemoActions,dispatch)
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Demo);
