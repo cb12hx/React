@@ -6,6 +6,7 @@ export default class Demo extends Component {
     }
     handleTest(){
     	const {ChangeText}=this.props.actions;
+        console.log(this.props)
     	ChangeText(Math.random()*100);
     }
     render() {    	 
